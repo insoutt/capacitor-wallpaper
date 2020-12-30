@@ -5,11 +5,16 @@ import Capacitor
  * Please read the Capacitor iOS Plugin Development Guide
  * here: https://capacitorjs.com/docs/plugins/ios
  */
-@objc(WallpaperPlugin)
-public class WallpaperPlugin: CAPPlugin {
+@objc(Wallpaper)
+public class Wallpaper: CAPPlugin {
 
-    @objc func setWallpaper(_ call: CAPPluginCall) {
-        print("Hola swift")
+    @objc func setImage(_ call: CAPPluginCall) {
+        call.success([
+            "success": true
+        ])
+    }
+
+    @objc func setBase64(_ call: CAPPluginCall) {
         call.success([
             "success": true
         ])

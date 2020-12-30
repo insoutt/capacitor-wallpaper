@@ -1,28 +1,28 @@
 import { WebPlugin } from '@capacitor/core';
-import { WallpaperPluginPlugin, WallpaperResult } from './definitions';
+import { WallpaperPlugin, WallpaperResult } from './definitions';
 
-export class WallpaperPluginWeb extends WebPlugin implements WallpaperPluginPlugin {
+export class WallpaperWeb extends WebPlugin implements WallpaperPlugin {
   constructor() {
     super({
-      name: 'WallpaperPlugin',
+      name: 'Wallpaper',
       platforms: ['web'],
     });
   }
 
-  setWallpaper(name: string): Promise<WallpaperResult> {
+  setImage(name: string): Promise<WallpaperResult> {
     console.log({name});
     throw new Error("This plugin does not support implementation for browser, test plugin in Android or iOS device")
   }
 
-  setWallpaperBase64(base64: string): Promise<WallpaperResult> {
+  setBase64(base64: string): Promise<WallpaperResult> {
     console.log({base64});
     throw new Error("This plugin does not support implementation for browser, test plugin in Android or iOS device")
   }
 }
 
-const WallpaperPlugin = new WallpaperPluginWeb();
+const Wallpaper = new WallpaperWeb();
 
-export { WallpaperPlugin };
+export { Wallpaper };
 
 import { registerWebPlugin } from '@capacitor/core';
-registerWebPlugin(WallpaperPlugin);
+registerWebPlugin(Wallpaper);

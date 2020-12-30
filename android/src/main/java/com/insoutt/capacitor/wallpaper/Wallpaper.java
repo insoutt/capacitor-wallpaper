@@ -20,10 +20,10 @@ import java.io.IOException;
         Manifest.permission.SET_WALLPAPER_HINTS
     }
 )
-public class WallpaperPlugin extends Plugin {
+public class Wallpaper extends Plugin {
 
     @PluginMethod
-    public void setWallpaper(PluginCall call) {
+    public void setImage(PluginCall call) {
 
         if (!call.getData().has("name")) {
             call.reject("Must provide an name");
@@ -39,7 +39,7 @@ public class WallpaperPlugin extends Plugin {
             // Fit image to screen size
             Bitmap tempBitMap = BitmapFactory.decodeResource(context.getResources(), drawableResourceId);
 
-            defineWallpaper(call, context, tempBitMap);
+            setWallpaper(call, context, tempBitMap);
         } catch (Exception e) {
             e.printStackTrace();
             call.reject("Image " + name + " does not exists in drawable folder.", e);
@@ -47,7 +47,7 @@ public class WallpaperPlugin extends Plugin {
     }
 
     @PluginMethod
-    public void setWallpaperBase64(PluginCall call) {
+    public void setBase64(PluginCall call) {
 
         if (!call.getData().has("base64")) {
             call.reject("Must provide an base64 string");
@@ -56,16 +56,19 @@ public class WallpaperPlugin extends Plugin {
 
         Context context = this.getContext();
         String base64Image = call.getString("base64");
+
+        // Transform base64 to Bitmap
         byte[] decodedString = Base64.decode(base64Image, Base64.DEFAULT);
         Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+
         try {
-            defineWallpaper(call, context, decodedByte);
+            setWallpaper(call, context, decodedByte);
         } catch (Exception e) {
             call.reject("Can not define base64 wallpaper.", e);
         }
     }
 
-    private void defineWallpaper(PluginCall call, Context context, Bitmap tempBitMap) {
+    private void setWallpaper(PluginCall call, Context context, Bitmap tempBitMap) {
         int width = Resources.getSystem().getDisplayMetrics().widthPixels;
         int height = Resources.getSystem().getDisplayMetrics().heightPixels;
         // System.out.println("w: " + width + " h:" + height);
