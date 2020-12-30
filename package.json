@@ -1,7 +1,7 @@
 {
   "name": "wallpaper-capacitor",
   "version": "1.0.0",
-  "description": "This plugin allows you to define a wallpaper in Android or iOS with Capacitor and IONIC",
+  "description": "This plugin allows you to define a wallpaper in Android with Capacitor and IONIC",
   "main": "dist/plugin.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
