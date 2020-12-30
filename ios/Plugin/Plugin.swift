@@ -8,10 +8,10 @@ import Capacitor
 @objc(WallpaperPlugin)
 public class WallpaperPlugin: CAPPlugin {
 
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
+    @objc func setWallpaper(_ call: CAPPluginCall) {
+        print("Hola swift")
         call.success([
-            "value": value
+            "success": true
         ])
     }
 }

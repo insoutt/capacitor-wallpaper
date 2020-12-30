@@ -10,4 +10,5 @@ export interface WallpaperResult {
 
 export interface WallpaperPluginPlugin {
   setWallpaper(name: string): Promise<WallpaperResult>;
+  setWallpaperBase64(base64: string): Promise<WallpaperResult>;
 }
