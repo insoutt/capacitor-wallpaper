@@ -59,10 +59,10 @@
   "swiftlint": "@ionic/swiftlint-config",
   "repository": {
     "type": "git",
-    "url": "https://github.com/insoutt/wallpaper-capacitor"
+    "url": "https://github.com/insoutt/capacitor-wallpaper"
   },
   "bugs": {
-    "url": "https://github.com/insoutt/wallpaper-capacitor/issues"
+    "url": "https://github.com/insoutt/capacitor-wallpaper/issues"
   },
-  "homepage": "https://github.com/insoutt/wallpaper-capacitor#readme"
+  "homepage": "https://github.com/insoutt/capacitor-wallpaper#readme"
 }
