@@ -14,7 +14,7 @@ export class WallpaperWeb extends WebPlugin implements WallpaperPlugin {
     throw new Error("This plugin does not support implementation for browser, test plugin in Android or iOS device")
   }
 
-  setBase64(options: { base64: string }): Promise<WallpaperResult> {
+  setBase64(options: { base64: string, data: string }): Promise<WallpaperResult> {
     console.log({options});
     throw new Error("This plugin does not support implementation for browser, test plugin in Android or iOS device")
   }
